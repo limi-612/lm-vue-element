@@ -1,0 +1,162 @@
+#main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.el-header, .el-footer {
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+  padding: 0 !important;
+}
+
+.el-aside {
+  background-color: #D3DCE6;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+  flex-shrink: 0;
+}
+
+.el-main {
+  background-color: #E9EEF3;
+  color: #333;
+  text-align: center;
+  // line-height: 160px;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 1px !important;
+  margin-top: 44px;
+}
+
+.el-container {
+  width: 100%;
+  height: 100%;
+}
+.container-main{
+  height: calc(100% - 60px) !important;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+
+// @font-face {
+//   font-family: 'iconfont';
+//   src: url('../assets/Ericsson-Icons/ericsson-icons.eot');
+//   src: url('../assets/Ericsson-Icons/ericsson-icons.eot?#iefix') format('embedded-opentype'),
+//       url('../assets/Ericsson-Icons/ericsson-icons.woff') format('woff'),
+//       url('../assets/Ericsson-Icons/ericsson-icons.ttf') format('truetype'),
+//       url('../assets/Ericsson-Icons/ericsson-icons.svg#iconfont') format('svg');
+// }
+// .iconfont {
+//   font-family: "iconfont" !important;
+//   font-size: 16px;
+//   font-style: normal;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+
+//菜单
+.menu-t{
+  text-align: left;
+  height: 100%;
+}
+
+//顶部导航
+.header-nav-bar{
+  width: 100%;
+  height: 100%;
+  background: #545c64;
+  position: relative;
+  color: #ffffff;
+  overflow: hidden;
+  .h-nav-left{
+    position: absolute;
+    width: 240px;
+    font-size: 14px;
+    font-weight: 500;
+    // background: black;
+    left: 0;
+    // img{
+    //   background:  #545c64;
+    //   width: 20px;
+    //   height: 20px;
+    //   padding-top: 10px;
+    // }
+  }
+  .h-nav-right{
+    position: absolute;
+    // width: 300px;
+    height: 100%;
+    padding: 0 10px;
+    right: 0;
+    // line-height: 90px;
+    // background: #ffffff;
+  }
+}
+
+//标签导航
+.nav-tag-bar{
+    height: 44px;
+    background-color: #B3C0D1;
+    line-height: 44px;
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    width: calc(100% - 240px);
+    .nav-tag{
+      background-color: #F0F0F0;
+      height: 44px;
+      line-height: 44px;
+      width: calc(100% - 66px);
+      position: absolute;
+      overflow: hidden;
+      margin: auto;
+      left: -22px;
+      right: 0;
+      .tags{
+          position: absolute;
+          padding: 0px 10px;
+          overflow: visible;
+          white-space: nowrap;
+          transition: left .3s ease;
+          text-align: left;
+        .el-tag{
+          cursor: pointer;
+        }
+        .el-tag + .el-tag {
+          margin-left: 10px;
+          
+        }
+      }
+      
+      // .button-new-tag {
+      //   margin-left: 10px;
+      //   height: 32px;
+      //   line-height: 30px;
+      //   padding-top: 0;
+      //   padding-bottom: 0;
+      // }
+      // .input-new-tag {
+      //   width: 90px;
+      //   margin-left: 10px;
+      //   vertical-align: bottom;
+      // }
+    }
+}
+.nav-p-b, .nav-n-b, .nav-n-d{
+  width: 22px;
+  background: #ffffff;
+}
+.nav-n-b{
+  right: 22px !important;
+}

@@ -1,15 +1,16 @@
 <template>
     <div class="nav-tag-bar">
         <span class="el-tabs__nav-prev nav-p-b" @click="scrollBtn(240)"><i class="el-icon-arrow-left"></i></span>
-        <span class="el-tabs__nav-next nav-n-b" @click="scrollBtn(-240)"><i class="el-icon-arrow-right"></i></span>
-         <!-- <el-popover
-            placement="top-start"
-            title="标题"
-            width="200"
-            trigger="hover"
-            content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"> -->
-        <span class="el-tabs__nav-next nav-n-d" @click="deleteAllTag"><i class="el-icon-delete"></i></span>
-         <!-- </el-popover> -->
+        <div class="el-tabs__nav-right" style="background-color: #FFF;">
+            <span class="el-tabs__nav-next nav-n-b" @click="scrollBtn(-240)"><i class="el-icon-arrow-right"></i></span>
+            <el-dropdown size="small" style="width:26px" @command="deleteTag">
+                <span class="nav-n-d"><i class="el-icon-circle-close"></i></span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item command="all">关闭所有</el-dropdown-item>
+                    <el-dropdown-item command="others">关闭其他</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+        </div>
         <div ref="scrollCon" class="nav-tag">
             <div ref="scrollBody" class="tags" :style="'left:'+tagBodyLeft+'px;'">
                 <el-tag
@@ -98,9 +99,14 @@ export default {
             }
         },
         //关闭所有tag
-        deleteAllTag(){
-            this.$store.commit('clearAllPages')
-            this.$router.push({name:'home'})
+        deleteTag(command){
+            if(command.includes('all')){
+                this.$store.commit('clearAllPages')
+                this.$router.push({name:'home'})
+            }else{
+                this.$store.commit('clearOthersPages',this.$route)
+            }
+            this.tagBodyLeft = 0
         },
         //跳转tag
         handleClick(tag){

@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7257973",
+      "name": "SUI_关闭全屏",
+      "font_class": "SUI_guanbiquanping",
+      "unicode": "e6fb",
+      "unicode_decimal": 59131
+    },
+    {
+      "icon_id": "10533855",
+      "name": "语言",
+      "font_class": "yuyan",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "11839114",
+      "name": "运维管理系统",
+      "font_class": "yyglxt",
+      "unicode": "e51e",
+      "unicode_decimal": 58654
+    },
+    {
+      "icon_id": "16850073",
+      "name": "屏幕_全屏",
+      "font_class": "quanping",
+      "unicode": "e7ab",
+      "unicode_decimal": 59307
+    }
+  ]
+}

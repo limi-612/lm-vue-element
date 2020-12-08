@@ -48,4 +48,8 @@ body {
   padding: 0;
   margin: 0;
 }
+ul,li{
+  margin: 0;
+  list-style-type: none;
+}
 </style>

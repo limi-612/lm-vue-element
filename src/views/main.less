@@ -48,23 +48,6 @@
   line-height: 320px;
 }
 
-// @font-face {
-//   font-family: 'iconfont';
-//   src: url('../assets/Ericsson-Icons/ericsson-icons.eot');
-//   src: url('../assets/Ericsson-Icons/ericsson-icons.eot?#iefix') format('embedded-opentype'),
-//       url('../assets/Ericsson-Icons/ericsson-icons.woff') format('woff'),
-//       url('../assets/Ericsson-Icons/ericsson-icons.ttf') format('truetype'),
-//       url('../assets/Ericsson-Icons/ericsson-icons.svg#iconfont') format('svg');
-// }
-// .iconfont {
-//   font-family: "iconfont" !important;
-//   font-size: 16px;
-//   font-style: normal;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-
-
 //菜单
 .menu-t{
   text-align: left;
@@ -101,13 +84,31 @@
     right: 0;
     // line-height: 90px;
     // background: #ffffff;
+    .h-nav-right-ul{
+      width: 100%;
+      height: 100%;
+      li{
+        float: left;
+        // width: 44px;
+        padding: 0 10px;
+        height: 100%;
+        font-size: 12px;
+        cursor: pointer;
+        /deep/.el-dropdown{
+          color: #ffffff !important;
+          font-size: 12px;
+          .iconfont{
+            font-size: 12px;
+          }
+        }
+      }
+    }
   }
 }
 
 //标签导航
 .nav-tag-bar{
     height: 44px;
-    background-color: #B3C0D1;
     line-height: 44px;
     box-sizing: border-box;
     display: block;
@@ -117,11 +118,11 @@
       background-color: #F0F0F0;
       height: 44px;
       line-height: 44px;
-      width: calc(100% - 66px);
+      width: calc(100% - 78px);
       position: absolute;
       overflow: hidden;
       margin: auto;
-      left: -22px;
+      left: -26px;
       right: 0;
       .tags{
           position: absolute;
@@ -154,9 +155,19 @@
     }
 }
 .nav-p-b, .nav-n-b, .nav-n-d{
-  width: 22px;
+  width: 26px;
   background: #ffffff;
+  box-sizing: border-box;
 }
 .nav-n-b{
-  right: 22px !important;
+  right: 26px !important;
+  border-right: 0.5px solid #e2e2e2;
 }
+.el-tabs__nav-right{
+  position: absolute;
+  line-height: 44px;
+  font-size: 12px;
+  color: #909399;
+  right: 0;
+  cursor: pointer;
+}    

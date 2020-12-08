@@ -48,11 +48,15 @@
   line-height: 320px;
 }
 
-//菜单
-.menu-t{
-  text-align: left;
-  height: 100%;
+//侧边菜单
+.side-menu{
+  // transition: width .3s ease;
+  .menu-t{
+    text-align: left;
+    height: 100%;
+  }
 }
+
 
 //顶部导航
 .header-nav-bar{
@@ -113,16 +117,17 @@
     box-sizing: border-box;
     display: block;
     position: fixed;
-    width: calc(100% - 240px);
+    overflow-x: hidden;
+    // width: calc(100% - 240px);
     .nav-tag{
       background-color: #F0F0F0;
       height: 44px;
       line-height: 44px;
-      width: calc(100% - 78px);
+      width: calc(100% - 104px);
       position: absolute;
       overflow: hidden;
       margin: auto;
-      left: -26px;
+      left:0;
       right: 0;
       .tags{
           position: absolute;
@@ -139,29 +144,28 @@
           
         }
       }
-      
-      // .button-new-tag {
-      //   margin-left: 10px;
-      //   height: 32px;
-      //   line-height: 30px;
-      //   padding-top: 0;
-      //   padding-bottom: 0;
-      // }
-      // .input-new-tag {
-      //   width: 90px;
-      //   margin-left: 10px;
-      //   vertical-align: bottom;
-      // }
     }
 }
-.nav-p-b, .nav-n-b, .nav-n-d{
+.nav-p-b, .nav-n-b, .nav-n-d, .nav-p-f{
   width: 26px;
   background: #ffffff;
   box-sizing: border-box;
 }
+.nav-p-b{
+  left: 26px !important;
+  border-left: 0.5px solid #e2e2e2;
+}
 .nav-n-b{
   right: 26px !important;
   border-right: 0.5px solid #e2e2e2;
+}
+.el-tabs__nav-left{
+  position: absolute;
+  line-height: 44px;
+  font-size: 12px;
+  color: #909399;
+  left: 0;
+  cursor: pointer;
 }
 .el-tabs__nav-right{
   position: absolute;

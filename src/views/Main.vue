@@ -6,13 +6,13 @@
             <header-nav-bar/>
         </el-header>
         <el-container class="container-main">
-            <el-aside width="240px">
+            <el-aside class="side-menu" :width="isCollapse ? '65px' : '240px'">
                 <!-- 菜单 -->
                <side-bar-menu :collapse="isCollapse" />
             </el-aside>
             <el-container>
             <!-- <el-footer class="nav-tag">Footer</el-footer> -->
-            <nav-tag-bar/>
+            <nav-tag-bar @changeCollapse="(active)=>{this.isCollapse=active}" :collapse="isCollapse"/>
             <el-main>
                 
                 <keep-alive>

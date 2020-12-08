@@ -1,7 +1,7 @@
 <template>
     <div class="header-nav-bar">
         <!-- <img src="/img/econ.6482186c.svg" > -->
-        <div class="h-nav-left"></el-avatar>Ericsson Design System</div>
+        <div class="h-nav-left"><span class="iconfont icon-yyglxt" style="font-size:26px"></span> Design System</div>
         <div class="h-nav-right">
             <!-- <i class="el-icon-full-screen"></i> -->
             <ul class="h-nav-right-ul">
@@ -47,11 +47,7 @@ export default {
     },
     methods:{
         changeLang(command){
-            if(command.includes('zh-CN')){
-                Vue.config.lang ='zh-CN'
-            }else{
-                Vue.config.lang ='en-US'
-            }
+            command.includes('zh-CN') ? Vue.config.lang ='zh-CN' : Vue.config.lang ='en-US'
         },
         operationUser(command){
             if(command.includes('modify')){

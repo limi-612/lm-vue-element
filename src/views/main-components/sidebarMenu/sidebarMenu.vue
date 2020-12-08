@@ -3,6 +3,7 @@
      <el-menu
         :router="true"
         :unique-opened="true"
+        :collapse-transition="false"
         :collapse="collapse"
         :default-active="routerActive"
         class="el-menu-vertical-demo  menu-t"
@@ -58,7 +59,7 @@ export default {
         handleOpen(){},
         handleClose(){},
         rightClicking(data){
-            this.$router.push({name:'id',params:{id:123}})
+            this.$router.push({name:'id',params:{id:new Date().getTime()}})
         },
     },
     mounted(){

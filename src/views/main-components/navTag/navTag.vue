@@ -1,6 +1,9 @@
 <template>
-    <div class="nav-tag-bar">
-        <span class="el-tabs__nav-prev nav-p-b" @click="scrollBtn(240)"><i class="el-icon-arrow-left"></i></span>
+    <div class="nav-tag-bar" :style="'width: calc(100% - '+(collapse ? '65px)' : '240px)')">
+        <div class="el-tabs__nav-left">
+            <span class="el-tabs__nav-prev nav-p-f" @click="collapseBtn"><i :class="collapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'"></i></span>
+            <span class="el-tabs__nav-prev nav-p-b" @click="scrollBtn(240)"><i class="el-icon-arrow-left"></i></span>
+        </div>
         <div class="el-tabs__nav-right" style="background-color: #FFF;">
             <span class="el-tabs__nav-next nav-n-b" @click="scrollBtn(-240)"><i class="el-icon-arrow-right"></i></span>
             <el-dropdown size="small" style="width:26px" @command="deleteTag">
@@ -58,6 +61,9 @@ export default {
         }
     },
     methods:{
+        collapseBtn(){
+            this.$emit('changeCollapse', !this.collapse)
+        },
         scrollBtn(offset){
              const outerWidth = this.$refs.scrollCon.offsetWidth
              const bodyWidth = this.$refs.scrollBody.offsetWidth

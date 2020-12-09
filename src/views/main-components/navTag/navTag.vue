@@ -9,8 +9,8 @@
             <el-dropdown size="small" style="width:26px" @command="deleteTag">
                 <span class="nav-n-d"><i class="el-icon-circle-close"></i></span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="all">关闭所有</el-dropdown-item>
-                    <el-dropdown-item command="others">关闭其他</el-dropdown-item>
+                    <el-dropdown-item command="all">{{$t('common.closeAll')}}</el-dropdown-item>
+                    <el-dropdown-item command="others">{{$t('common.closeOther')}}</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>

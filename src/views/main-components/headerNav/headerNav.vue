@@ -21,8 +21,8 @@
                             <i class="el-icon-user-solid"></i>admin
                         </span>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item command="modify">修改资料</el-dropdown-item>
-                            <el-dropdown-item command="dropOut">退出</el-dropdown-item>
+                            <el-dropdown-item command="modify">{{$t('common.modifyInformation')}}</el-dropdown-item>
+                            <el-dropdown-item command="dropOut">{{$t('common.dropOut')}}</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
                 </li>

@@ -6,13 +6,10 @@
         :collapse-transition="false"
         :collapse="collapse"
         :default-active="routerActive"
-        class="el-menu-vertical-demo  menu-t"
+        class="el-menu-vertical-demo"
         @select="handleSelect"
         @open="handleOpen"
-        @close="handleClose"
-        :background-color="theme.backgroundColor"
-        :text-color="theme.textColor"
-        :active-text-color="theme.activeTextColor">
+        @close="handleClose">
         <el-submenu v-for="(item,index) in  menuList" :index="item.name" :key="index">
             <template slot="title">
                 <i :class="item.meta.icon"></i>

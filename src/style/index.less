@@ -1,0 +1,12 @@
+@import './theme-func.less';
+.theme-gray{
+      .theme();
+}
+.theme-blue {
+      @error-color: yellow;
+      @success-color: green;
+      @active-color:#077db8;
+      @hover-focus-color:#077db8;
+      @main-background-color:#021d38;
+      .theme(@error-color, @success-color,@active-color,@hover-focus-color,@main-background-color);
+}

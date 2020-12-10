@@ -22,7 +22,7 @@
                     v-for="(tag,index) in pageTagsList"
                     :ref="tag.path"
                     :name="tag.name"
-                    :type="currentPagePath==tag.path ? theme.tagType : 'info'"
+                    :class="currentPagePath==tag.path ? 'is-active-tag' : 'el-tag--info'"
                     :key="index"
                     :closable="tag.path=='/home' ? false : true "
                     :disable-transitions="false"

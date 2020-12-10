@@ -1,0 +1,54 @@
+.theme(@error-color: red, @success-color: green,@active-color:#a2a4a5,@hover-focus-color:#a2a4a5,@main-background-color:#545c64) {
+    .error-font {
+        color: @error-color;
+    }
+    .success-font {
+        color: @success-color;
+    }
+    //头部导航
+    .header-meun{
+        background-color: @main-background-color;
+    }
+    //导航标签
+    .is-active-tag{
+        background-color: @active-color;
+        border-color: @active-color;
+    }
+    .el-tag__close:hover{
+        color: #FFF;
+        background-color: #898b8d !important;
+    }
+    //侧边栏菜单
+    .is-active{
+        color: #FFF !important;
+        background-color: @hover-focus-color;
+    }
+    .el-menu{
+        text-align: left;
+        height: 100%;
+        background-color: @main-background-color;
+    }
+    .el-submenu__title,.el-menu-item{
+        color: #fff;
+        i{
+            color: #FFF !important;
+        }
+    }
+    .el-submenu__title:focus{
+        color: #FFF !important;
+        background-color: @hover-focus-color;
+    }
+    .el-submenu__title:hover{
+        color: #FFF !important;
+        background-color: @hover-focus-color;
+    }
+    .el-menu-item:focus{
+        color: #FFF !important;
+        background-color: @hover-focus-color;
+    }
+    .el-menu-item:hover{
+        color: #FFF !important;
+        background-color: @hover-focus-color;
+    }
+    
+}

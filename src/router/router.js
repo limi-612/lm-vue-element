@@ -38,12 +38,11 @@ export const appRouter = [
       { path: 'about/:id', name: 'id',meta: { title: 'test-2-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
       { path: 'a', name: 'a',meta: { title: 'test-2-2', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/throttle-function/throttleFunction.vue')},
       { path: 'b', name: 'b',meta: { title: 'test-2-3', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/excel/exportExcel.vue')},
-      { path: 'c', name: 'c',meta: { title: 'test-2-4', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'c', name: 'c',meta: { title: 'test-2-4', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/switch-theme/switchTheme.vue')},
       { path: 'd', name: 'd',meta: { title: 'test-2-5', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
       { path: 'e', name: 'e',meta: { title: 'test-2-6', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
       { path: 'f', name: 'f',meta: { title: 'test-2-7', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')}
     ]
-    
   },
   {
     path: '/a-b',

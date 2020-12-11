@@ -8,7 +8,7 @@ const store = new Vuex.Store({
     state: {
         AllPages:appRouter,
         openPages:[
-            { path: '/home', name: 'home',meta: { title: 'test-1-1', icon: 'el-icon-menu' }, component: () => import('@/views/Home.vue') }
+            { path: '/home', name: 'home',meta: { title: 'test-1-1', icon: 'el-icon-menu' }, component: () => import('@/views/system/home/Home.vue') }
         ],
         cachePage:['/home']
     },

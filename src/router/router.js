@@ -18,19 +18,28 @@ export const otherRouter = [
     redirect: 'home',
     meta: { title: 'test-1', icon: 'el-icon-menu' },
     children: [
-      { path: 'home', name: 'home',meta: { title: 'test-1-1', icon: 'el-icon-menu' }, component: () => import('@/views/Home.vue') }
+      { path: 'home', name: 'home',meta: { title: 'test-1-1', icon: 'el-icon-menu' }, component: () => import('@/views/system/home/Home.vue') }
     ]
   },
 ];
 
 export const appRouter = [
- 
   {
-    path: '/a-a',
-    name: 'aa',
+    path: '/sys',
+    name: 'sys',
     component: Main,
-    redirect: 'about',
-    meta: { title: 'test-2', icon: 'el-icon-menu' },
+    redirect: 'sys',
+    meta: { title: 'menus.systemConfig', icon: 'el-icon-menu' },
+    children: [
+      { path: 'menu-configuration', name: 'menu-configuration',meta: { title: 'menus.menuConfiguration', icon: 'el-icon-menu' }, component: () => import('@/views/system/menu-configuration/menuConfiguration.vue')},
+    ]
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: Main,
+    redirect: 'demo',
+    meta: { title: 'menus.demo', icon: 'el-icon-menu' },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.

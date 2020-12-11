@@ -10,9 +10,12 @@ export default {
     dropOut: '退出'
   },
   menus:{
+    demo:'案例',
     throttleFunction:'监听窗口变化',
     exportExcel:'导出表格',
-    switchTheme:'切换主题'
+    switchTheme:'切换主题',
+    menuConfiguration:'菜单配置',
+    systemConfig:'系统配置',
   },
   eea: {
     home: '首页'

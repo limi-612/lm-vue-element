@@ -10,9 +10,12 @@ export default {
     dropOut: 'Drop out'
   },
   menus:{
+    demo:'Demo',
     throttleFunction:'Throttle function',
     exportExcel:'Export excel',
-    switchTheme:'Switch theme'
+    switchTheme:'Switch theme',
+    menuConfiguration:'Menu configuration',
+    systemConfig:'System configuration'
   },
   eea: {
     home: 'Home'

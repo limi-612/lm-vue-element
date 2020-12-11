@@ -13,7 +13,7 @@
         <el-submenu v-for="(item,index) in  menuList" :index="item.name" :key="index">
             <template slot="title">
                 <i :class="item.meta.icon"></i>
-                <span>{{item.meta.title}}</span>
+                <span>{{$t(item.meta.title)}}</span>
             </template>
             <el-menu-item v-for="(menuItem,idx) in item.children" :index="item.path+'/'+menuItem.path" :key="idx" @contextmenu.prevent.native="rightClicking(menuItem)">{{$t(menuItem.meta.title)}}</el-menu-item>
         </el-submenu>

@@ -2,6 +2,10 @@ import { appRouter } from "../router/router"
 
 let util={}
 
+util.setTitle = function(vm, route) {
+    window.document.title = vm.$t(route.meta.title)
+}
+
 util.openNewPage = function (vm, route) {
     if(!vm.$store){return}
     let routeParam=route
@@ -27,7 +31,7 @@ util.openNewPage = function (vm, route) {
     }
 }
 
-// util.closeSinglePage= function (vm, route) {
+util.displayPage= function (vm, list) {
 
-// }
+}
 export default util;

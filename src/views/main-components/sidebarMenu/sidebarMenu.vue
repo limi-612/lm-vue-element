@@ -1,6 +1,6 @@
 <template>
 <!-- :collapse="true" 展开收起菜单 -->
-     <el-menu
+    <el-menu
         :router="true"
         :unique-opened="true"
         :collapse-transition="false"
@@ -15,7 +15,7 @@
                 <i :class="item.meta.icon"></i>
                 <span>{{item.meta.title}}</span>
             </template>
-            <el-menu-item v-for="(menuItem,idx) in item.children" :index="item.path+'/'+menuItem.path" :key="idx" @contextmenu.prevent.native="rightClicking(menuItem)">{{menuItem.meta.title}}</el-menu-item>
+            <el-menu-item v-for="(menuItem,idx) in item.children" :index="item.path+'/'+menuItem.path" :key="idx" @contextmenu.prevent.native="rightClicking(menuItem)">{{$t(menuItem.meta.title)}}</el-menu-item>
         </el-submenu>
     </el-menu>
 </template>
@@ -24,18 +24,6 @@ import { appRouter } from "../../../router/router"
 export default {
     name:'side-bar-menu',
     props:{
-        theme:{
-            type:Object,
-            default:()=>{
-                let data={
-                    backgroundColor:'#545c64',
-                    textColor:'#fff',
-                    activeTextColor:'#ffd04b',
-                    tagType:'warning',
-                }
-                return data
-            }
-        },
         collapse:Boolean
     },
     data(){

@@ -28,7 +28,7 @@
                     :disable-transitions="false"
                     @close="handleClose(tag)"
                     @click="handleClick(tag)">
-                    {{tag.meta.title}}
+                    {{$t(tag.meta.title)}}
                 </el-tag>
             </div>
         </div>
@@ -38,18 +38,6 @@
 export default {
     name:'nav-tag-bar',
     props:{
-        theme:{
-            type:Object,
-            default:()=>{
-                let data={
-                    backgroundColor:'#545c64',
-                    textColor:'#fff',
-                    activeTextColor:'#ffd04b',
-                    tagType:'warning',
-                }
-                return data
-            }
-        },
         collapse:Boolean
     },
     data(){

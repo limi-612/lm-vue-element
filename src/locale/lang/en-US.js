@@ -1,11 +1,20 @@
 export default {
-  common:{
-    closeAll:'Close all',
-    closeOther:'Close other',
-    modifyInformation:'Modify information',
-    dropOut:'Drop out'
+  themes: {
+    themeGray: 'Grey theme',
+    themeBlue: 'Dark blue theme'
   },
-  eea:{
-    home:'Home'
+  common: {
+    closeAll: 'Close all',
+    closeOther: 'Close other',
+    modifyInformation: 'Modify information',
+    dropOut: 'Drop out'
+  },
+  menus:{
+    throttleFunction:'Throttle function',
+    exportExcel:'Export excel',
+    switchTheme:'Switch theme'
+  },
+  eea: {
+    home: 'Home'
   }
 }

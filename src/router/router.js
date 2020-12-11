@@ -36,9 +36,9 @@ export const appRouter = [
     // which is lazy-loaded when the route is visited.
     children: [
       { path: 'about/:id', name: 'id',meta: { title: 'test-2-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'a', name: 'a',meta: { title: 'test-2-2', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/throttle-function/throttleFunction.vue')},
-      { path: 'b', name: 'b',meta: { title: 'test-2-3', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/excel/exportExcel.vue')},
-      { path: 'c', name: 'c',meta: { title: 'test-2-4', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/switch-theme/switchTheme.vue')},
+      { path: 'a', name: 'a',meta: { title: 'menus.throttleFunction', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/throttle-function/throttleFunction.vue')},
+      { path: 'b', name: 'b',meta: { title: 'menus.exportExcel', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/excel/exportExcel.vue')},
+      { path: 'c', name: 'c',meta: { title: 'menus.switchTheme', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/switch-theme/switchTheme.vue')},
       { path: 'd', name: 'd',meta: { title: 'test-2-5', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
       { path: 'e', name: 'e',meta: { title: 'test-2-6', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
       { path: 'f', name: 'f',meta: { title: 'test-2-7', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')}
@@ -50,9 +50,6 @@ export const appRouter = [
     component: Main,
     redirect: 'about',
     meta: { title: 'test-3', icon: 'el-icon-menu' },
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     children: [
       { path: 'an/:id', name: 'an',meta: { title: 'test-3-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
       { path: 'av', name: 'av',meta: { title: 'test-3-2', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},

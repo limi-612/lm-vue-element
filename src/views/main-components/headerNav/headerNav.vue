@@ -1,7 +1,7 @@
 <template>
     <div class="header-nav-bar header-meun">
         <!-- <img src="/img/econ.6482186c.svg" > -->
-        <div class="h-nav-left"><span class="iconfont icon-yyglxt" style="font-size:26px"></span> Design System</div>
+        <div class="h-nav-left"><span class="iconfont icon-yyglxt" style="font-size:26px"></span><span>Design System</span></div>
         <div class="h-nav-right">
             <!-- <i class="el-icon-full-screen"></i> -->
             <ul class="h-nav-right-ul">
@@ -12,7 +12,7 @@
                             <i class="el-icon-magic-stick"></i>
                         </span>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item v-for="(item,index) in themes" :key="index" :command="item.value">{{item.name}}</el-dropdown-item>
+                            <el-dropdown-item v-for="(item,index) in themes" :key="index" :command="item.value"><span :class="item.class"></span>&nbsp{{$t(item.name)}}</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
                 </li>
@@ -44,6 +44,7 @@
 import Vue from 'vue'
 import Cookies from 'js-cookie';
 import Fullscreen from '../fullscreen/fullscreen'
+import Util from '../../../libs/util'
 export default {
     name: 'header-nav-bar',
     components:{
@@ -54,15 +55,17 @@ export default {
             icon:require("@/assets/icon/econ.svg"),
             isFullscreen:false,
             themes: [
-                { name: '灰色主题', value: 'theme-gray' },
-                { name: '蔚蓝主题', value: 'theme-blue' },
+                { name: 'themes.themeGray', value: 'theme-gray' ,class:'span-gray'},
+                { name: 'themes.themeBlue', value: 'theme-blue' ,class:'span-blue'},
             ],
-            theme: 'theme-gray'
+            theme: '',
+
         }
     },
     methods:{
         changeLang(command){
             command.includes('zh-CN') ? Vue.config.lang ='zh-CN' : Vue.config.lang ='en-US'
+            Util.setTitle(this,this.$route)
         },
         operationUser(command){
             if(command.includes('modify')){

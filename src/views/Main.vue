@@ -1,24 +1,24 @@
 <template>
     <div id="main">
         <el-container>
+        <!-- 头部导航-->
         <el-header>
-            <!-- 顶部菜单 -->
             <header-nav-bar/>
         </el-header>
         <el-container class="container-main">
+            <!-- 侧边栏菜单 -->
             <el-aside class="side-menu" :width="isCollapse ? '65px' : '240px'">
-                <!-- 菜单 -->
                <side-bar-menu :collapse="isCollapse" />
             </el-aside>
             <el-container>
-            <!-- <el-footer class="nav-tag">Footer</el-footer> -->
-            <nav-tag-bar @changeCollapse="(active)=>{this.isCollapse=active}" :collapse="isCollapse"/>
-            <el-main>
-                
-                <keep-alive>
-                    <router-view :key="key"></router-view>
-                </keep-alive>
-            </el-main>
+                <!-- 头部多标签栏 -->
+                <nav-tag-bar @changeCollapse="(active)=>{this.isCollapse=active}" :collapse="isCollapse"/>
+                <!-- 中间内容 -->
+                <el-main>
+                    <keep-alive>
+                        <router-view :key="key"></router-view>
+                    </keep-alive>
+                </el-main>
             </el-container>
         </el-container>
         </el-container>  

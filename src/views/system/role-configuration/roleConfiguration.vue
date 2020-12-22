@@ -6,20 +6,18 @@
         <!-- <el-button @click="handleClick" type="primary">确定</el-button> -->
        
         <table-bank :tableColumn="tableColumn" :tableData="tableData">
-            <el-table-column slot="extraColumn" fixed="right" label="操作" width="220">
-                <!-- handleEdit(scope.$index, scope.row) -->
-                <!-- @click="handleDelete(scope.$index, scope.row)" -->
-                <!-- <template slot-scope="scope"> -->
-                    <el-button size="mini" @click="()=>{dialogVisible = true}">配置</el-button>
+            <el-table-column  slot="extraColumn" fixed="right" label="操作" width="220">
+                <template slot-scope="scope">
+                    <el-button size="mini" @click="showConfiguration(scope.$index, scope.row)">配置</el-button>
                     <el-button size="mini" type="danger" >删除</el-button>              
-                <!-- </template> -->
+                </template>
             </el-table-column> 
         </table-bank>
      <!-- 弹窗 -->
-        <el-dialog title="用户菜单权限配置" :visible.sync="dialogVisible" @close="clickCancel" width="600" top="10vh">
+        <el-dialog title="用户菜单权限配置" :visible.sync="dialog.dialogVisible" @close="clickCancel" width="600" top="10vh">
             <el-tree
                 ref="tree"
-                :data="data"
+                :data="treeData.data"
                 show-checkbox
                 node-key="id"
                 :default-checked-keys="defaultCheckedKeys"
@@ -37,36 +35,12 @@
 </template>
 <script>
 import tableBank from "../../common-components/table-bank/tableBank"
+import util from "../../../libs/util"
 export default {
     name:'menu-configuration',
     components:{tableBank},
     data(){
         return{
-            data: [
-                {
-                    id: '1x',
-                    label: '一级 1',
-                    children: [{
-                        id: '4x',
-                        label: '二级 1-1',
-                    },{
-                        id: '5x',
-                        label: '二级 1-2',
-                    }
-                    ]
-                }, 
-                {
-                    id: '2x',
-                    label: '一级 2',
-                    children: [{
-                        id: '6x',
-                        label: '二级 2-1'
-                    }, {
-                        id: '7x',
-                        label: '二级 2-2'
-                    }]
-                }
-            ],
             defaultCheckedKeys:[],
             checkedKeys:[],
             tableColumn:[
@@ -89,8 +63,14 @@ export default {
                     description:''
                 }
             ],
-            dialogVisible: false,
-            checkAll:false
+            dialog:{
+                rowId:null,
+                dialogVisible: false
+            },
+            checkAll:false,
+            treeData:{
+                data:[]
+            }
         }
     },
     methods:{
@@ -99,28 +79,49 @@ export default {
             this.defaultCheckedKeys=['5x']
             this.checkedKeys=['5x']
         },
+        showConfiguration(index,row){
+            console.log(row)
+            //保存当前id
+            this.dialog.rowId=row.user
+            //弹窗展示
+            this.dialog.dialogVisible = true
+            //获取设置目录数据
+            this.treeData = util.getMenuPermissionData(this,this.$store.state.AllPages)
+            //设置已给权限目录
+            let roleData= JSON.parse(window.localStorage.getItem('role-'+this.dialog.rowId))
+            this.defaultCheckedKeys = roleData ? roleData : []
+            //判断全选或者反选
+            roleData.length >= this.treeData.ids.length ? this.checkAll = true : this.checkAll = false
+            console.log('获取存储目录权限',window.localStorage.getItem('role-'+this.dialog.rowId))
+        },
         //树形控件选中
         handleCheckChange(data, node){
+            //存储当前选项
             this.checkedKeys=node.checkedKeys
-            console.log('选中数据',data,node)
         },
         //全/反选
         handleChecked(){
             if(this.checkAll){
                 this.$refs.tree.setCheckedKeys([]);
+                this.checkedKeys=[]
             }else{
-
+                this.$refs.tree.setCheckedKeys(this.treeData.ids);
+                this.checkedKeys=this.treeData.ids
             }
             this.checkAll=!this.checkAll
         },
         //保存
         clickSubmit(){
-            console.log('保存',this.checkedKeys)
+            console.log('根据用户存储目录权限',this.checkedKeys)
+            //根据id存储当前权限
+            window.localStorage.setItem('role-'+this.dialog.rowId, JSON.stringify(this.checkedKeys));
+            //清理
             this.clickCancel()
         },
         //取消（关闭弹窗）
         clickCancel(){
-            this.dialogVisible = false
+            this.dialog.dialogVisible = false
+            this.checkAll=false
         }
     }
 }

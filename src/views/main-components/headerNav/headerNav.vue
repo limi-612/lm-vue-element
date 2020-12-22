@@ -9,7 +9,8 @@
                 <li>
                     <el-dropdown size="small"  @command="operationTheme">
                         <span class="el-dropdown-link">
-                            <i class="el-icon-magic-stick"></i>
+                            <!-- <i class="el-icon-magic-stick"></i> -->
+                            <span class="iconfont icon-zhuti"></span>
                         </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item v-for="(item,index) in themes" :key="index" :command="item.value"><span :class="item.class"></span>&nbsp{{$t(item.name)}}</el-dropdown-item>
@@ -73,6 +74,8 @@ export default {
             }else{
                 Cookies.remove('userInfo');
                 this.$router.push({name:'login'})
+                //清理权限管理页面存储的数据
+                Object.keys(localStorage).forEach(item => item.indexOf('role-') != -1 ? localStorage.removeItem(item) : '')
             }
         },
         operationTheme(theme){

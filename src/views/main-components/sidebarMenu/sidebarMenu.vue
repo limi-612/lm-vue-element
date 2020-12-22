@@ -20,7 +20,6 @@
     </el-menu>
 </template>
 <script>
-import { appRouter } from "../../../router/router"
 export default {
     name:'side-bar-menu',
     props:{
@@ -29,7 +28,7 @@ export default {
     data(){
         return{
             routerActive:this.$route.path,
-            menuList:appRouter,
+            menuList:this.$store.state.AllPages,
         }
     },
      watch: {

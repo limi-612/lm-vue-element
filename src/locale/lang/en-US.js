@@ -6,7 +6,7 @@ export default {
   common: {
     closeAll: 'Close all',
     closeOther: 'Close other',
-    modifyInformation: 'Modify information',
+    personalSpace: 'Personal space',
     dropOut: 'Drop out'
   },
   menus:{
@@ -14,7 +14,7 @@ export default {
     throttleFunction:'Throttle function',
     exportExcel:'Export excel',
     switchTheme:'Switch theme',
-    menuConfiguration:'Menu configuration',
+    roleConfiguration:'Role configuration',
     systemConfig:'System configuration'
   },
   eea: {

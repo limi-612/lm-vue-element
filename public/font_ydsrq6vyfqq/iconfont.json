@@ -20,11 +20,11 @@
       "unicode_decimal": 58916
     },
     {
-      "icon_id": "11839114",
-      "name": "运维管理系统",
-      "font_class": "yyglxt",
-      "unicode": "e51e",
-      "unicode_decimal": 58654
+      "icon_id": "13062876",
+      "name": "主题",
+      "font_class": "zhuti",
+      "unicode": "e508",
+      "unicode_decimal": 58632
     },
     {
       "icon_id": "16850073",
@@ -32,6 +32,13 @@
       "font_class": "quanping",
       "unicode": "e7ab",
       "unicode_decimal": 59307
+    },
+    {
+      "icon_id": "18887733",
+      "name": "星星",
+      "font_class": "shengdantubiao-05",
+      "unicode": "e606",
+      "unicode_decimal": 58886
     }
   ]
 }

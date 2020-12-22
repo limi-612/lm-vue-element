@@ -6,7 +6,7 @@ export default {
   common: {
     closeAll: '关闭所有',
     closeOther: '关闭其他',
-    modifyInformation: '修改资料',
+    personalSpace: '个人空间',
     dropOut: '退出'
   },
   menus:{
@@ -14,7 +14,7 @@ export default {
     throttleFunction:'监听窗口变化',
     exportExcel:'导出表格',
     switchTheme:'切换主题',
-    menuConfiguration:'菜单配置',
+    roleConfiguration:'权限配置',
     systemConfig:'系统配置',
   },
   eea: {

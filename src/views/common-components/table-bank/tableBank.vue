@@ -8,6 +8,7 @@
         :width="item.width"
         :fixed="item.fixed"
         ></el-table-column>
+        <slot name="extraColumn"></slot>
     </el-table>
 </template>
 <script>

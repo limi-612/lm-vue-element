@@ -1,7 +1,7 @@
 <template>
     <div class="header-nav-bar header-meun">
         <!-- <img src="/img/econ.6482186c.svg" > -->
-        <div class="h-nav-left"><span class="iconfont icon-yyglxt" style="font-size:26px"></span><span>Design System</span></div>
+        <div class="h-nav-left"><span class="iconfont icon-shengdantubiao-05" style="font-size:26px"></span>&nbsp&nbsp<span>Design System</span></div>
         <div class="h-nav-right">
             <!-- <i class="el-icon-full-screen"></i> -->
             <ul class="h-nav-right-ul">
@@ -31,7 +31,7 @@
                             <i class="el-icon-user-solid"></i>admin
                         </span>
                         <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item command="modify">{{$t('common.modifyInformation')}}</el-dropdown-item>
+                            <el-dropdown-item command="modify">{{$t('common.personalSpace')}}</el-dropdown-item>
                             <el-dropdown-item command="dropOut">{{$t('common.dropOut')}}</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>

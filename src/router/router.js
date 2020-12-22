@@ -29,9 +29,10 @@ export const appRouter = [
     name: 'sys',
     component: Main,
     redirect: 'sys',
+    label:'menus.systemConfig',
     meta: { title: 'menus.systemConfig', icon: 'el-icon-menu' },
     children: [
-      { path: 'menu-configuration', name: 'menu-configuration',meta: { title: 'menus.menuConfiguration', icon: 'el-icon-menu' }, component: () => import('@/views/system/menu-configuration/menuConfiguration.vue')},
+      { path: 'role-configuration', name: 'role-configuration',label:'menus.roleConfiguration', meta: { title: 'menus.roleConfiguration', icon: 'el-icon-menu' }, component: () => import('@/views/system/role-configuration/roleConfiguration.vue')},
     ]
   },
   {
@@ -39,18 +40,19 @@ export const appRouter = [
     name: 'demo',
     component: Main,
     redirect: 'demo',
+    label:'menus.demo',
     meta: { title: 'menus.demo', icon: 'el-icon-menu' },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     children: [
-      { path: 'about/:id', name: 'id',meta: { title: 'test-2-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'a', name: 'a',meta: { title: 'menus.throttleFunction', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/throttle-function/throttleFunction.vue')},
-      { path: 'b', name: 'b',meta: { title: 'menus.exportExcel', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/excel/exportExcel.vue')},
-      { path: 'c', name: 'c',meta: { title: 'menus.switchTheme', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/switch-theme/switchTheme.vue')},
-      { path: 'd', name: 'd',meta: { title: 'test-2-5', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'e', name: 'e',meta: { title: 'test-2-6', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'f', name: 'f',meta: { title: 'test-2-7', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')}
+      { path: 'about/:id', name: 'id',label:'test-2-1', meta: { title: 'test-2-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'a', name: 'a',label:'menus.throttleFunction', meta: { title: 'menus.throttleFunction', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/throttle-function/throttleFunction.vue')},
+      { path: 'b', name: 'b',label:'menus.exportExcel', meta: { title: 'menus.exportExcel', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/excel/exportExcel.vue')},
+      { path: 'c', name: 'c',label:'menus.switchTheme', meta: { title: 'menus.switchTheme', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/switch-theme/switchTheme.vue')},
+      { path: 'd', name: 'd',label:'test-2-5', meta: { title: 'test-2-5', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'e', name: 'e',label:'test-2-6', meta: { title: 'test-2-6', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'f', name: 'f',label:'test-2-7', meta: { title: 'test-2-7', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')}
     ]
   },
   {
@@ -58,21 +60,22 @@ export const appRouter = [
     name: 'a-b',
     component: Main,
     redirect: 'about',
+    label:'test-3', 
     meta: { title: 'test-3', icon: 'el-icon-menu' },
     children: [
-      { path: 'an/:id', name: 'an',meta: { title: 'test-3-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'av', name: 'av',meta: { title: 'test-3-2', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'bv', name: 'bv',meta: { title: 'test-3-3', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'cv', name: 'cv',meta: { title: 'test-3-4', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'dv', name: 'dv',meta: { title: 'test-3-5', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'ev', name: 'ev',meta: { title: 'test-3-6', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'fv', name: 'fv',meta: { title: 'test-3-7', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'gv', name: 'gv',meta: { title: 'test-3-8', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'hv', name: 'hv',meta: { title: 'test-3-9', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'kv', name: 'kv',meta: { title: 'test-3-10', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'lv', name: 'lv',meta: { title: 'test-3-11', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'rv', name: 'rv',meta: { title: 'test-3-12', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { path: 'jv', name: 'jv',meta: { title: 'test-3-13', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')}
+      { path: 'an/:id', name: 'an',label:'test-3-1', meta: { title: 'test-3-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'av', name: 'av',label:'test-3-2', meta: { title: 'test-3-2', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'bv', name: 'bv',label:'test-3-3', meta: { title: 'test-3-3', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'cv', name: 'cv',label:'test-3-4', meta: { title: 'test-3-4', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'dv', name: 'dv',label:'test-3-5', meta: { title: 'test-3-5', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'ev', name: 'ev',label:'test-3-6', meta: { title: 'test-3-6', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'fv', name: 'fv',label:'test-3-7', meta: { title: 'test-3-7', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'gv', name: 'gv',label:'test-3-8', meta: { title: 'test-3-8', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'hv', name: 'hv',label:'test-3-9', meta: { title: 'test-3-9', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'kv', name: 'kv',label:'test-3-10', meta: { title: 'test-3-10', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'lv', name: 'lv',label:'test-3-11', meta: { title: 'test-3-11', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'rv', name: 'rv',label:'test-3-12', meta: { title: 'test-3-12', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { path: 'jv', name: 'jv',label:'test-3-13', meta: { title: 'test-3-13', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')}
     ]
     
   }

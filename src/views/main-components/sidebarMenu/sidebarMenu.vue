@@ -10,12 +10,12 @@
         @select="handleSelect"
         @open="handleOpen"
         @close="handleClose">
-        <el-submenu v-for="(item,index) in  menuList" :index="item.name" :key="index">
+        <el-submenu v-for="(item,index) in  menuList" :index="item.name" :key="index" v-show="item.show">
             <template slot="title">
                 <i :class="item.meta.icon"></i>
                 <span>{{$t(item.meta.title)}}</span>
             </template>
-            <el-menu-item v-for="(menuItem,idx) in item.children" :index="item.path+'/'+menuItem.path" :key="idx" @contextmenu.prevent.native="rightClicking(menuItem)">{{$t(menuItem.meta.title)}}</el-menu-item>
+            <el-menu-item v-for="(menuItem,idx) in item.children" :index="item.path+'/'+menuItem.path" :key="idx" @contextmenu.prevent.native="rightClicking(menuItem)" v-show="menuItem.show">{{$t(menuItem.meta.title)}}</el-menu-item>
         </el-submenu>
     </el-menu>
 </template>

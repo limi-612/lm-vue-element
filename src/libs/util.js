@@ -1,4 +1,6 @@
 import { appRouter } from "../router/router"
+import Cookies from 'js-cookie';
+import { turn } from "core-js/fn/array";
 
 let util = {}
 
@@ -31,7 +33,27 @@ util.openNewPage = function (vm, route) {
     }
 }
 
-util.displayPage = function (vm, list) {
+util.setDisplayPage = function (data, restrictedData) {
+    // let showSeates
+    if (restrictedData) {
+        for (let a = 0; a < data.length; a++) {
+            restrictedData['halfCheckedKeys'].indexOf(data[a].id) >= 0 || restrictedData['checkedKeys'].indexOf(data[a].id) >= 0 ? data[a].show = true : data[a].show = false
+            if (data[a].children) {
+                for (let b = 0; b < data[a].children.length; b++) {
+                    restrictedData['checkedKeys'].indexOf(data[a].children[b].id) >= 0 ? data[a].children[b].show = true : data[a].children[b].show = false
+                }
+            }
+        }
+    } else {
+        for (let a = 0; a < data.length; a++) {
+            Cookies.get('userInfo') == 'admin' ? data[a].show = true : data[a].show = false
+            if (data[a].children) {
+                for (let b = 0; b < data[a].children.length; b++) {
+                    Cookies.get('userInfo') == 'admin' ? data[a].children[b].show = true : data[a].children[b].show = false
+                }
+            }
+        }
+    }
 
 }
 

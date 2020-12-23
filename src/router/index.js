@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 import Util from '../libs/util'
 
 Vue.use(VueRouter);
-console.log(Cookies.get('userInfo'))
 // 路由配置
 const RouterConfig = {
   routes: routers

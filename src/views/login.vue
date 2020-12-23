@@ -16,6 +16,8 @@
 </template>
 <script>
 import Cookies from 'js-cookie';
+import util from "../libs/util";
+import {appRouter} from "../router/router"
 export default {
     data(){
         return{
@@ -29,7 +31,10 @@ export default {
     methods:{
         submitForm(){
             Cookies.set('userInfo',this.ruleForm.user)
+            this.$store.commit('clearAllPages')
             this.$router.push({name:'home'})
+            // location.reload()
+            util.setDisplayPage(appRouter,JSON.parse(window.localStorage.getItem('role-'+Cookies.get('userInfo'))))
         },
         resetForm(){
 

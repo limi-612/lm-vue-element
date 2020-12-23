@@ -75,7 +75,7 @@ export default {
                 Cookies.remove('userInfo');
                 this.$router.push({name:'login'})
                 //清理权限管理页面存储的数据
-                Object.keys(localStorage).forEach(item => item.indexOf('role-') != -1 ? localStorage.removeItem(item) : '')
+                // Object.keys(localStorage).forEach(item => item.indexOf('role-') != -1 ? localStorage.removeItem(item) : '')
             }
         },
         operationTheme(theme){

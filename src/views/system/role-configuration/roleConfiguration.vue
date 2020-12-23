@@ -14,7 +14,7 @@
             </el-table-column> 
         </table-bank>
      <!-- 弹窗 -->
-        <el-dialog title="用户菜单权限配置" :visible.sync="dialog.dialogVisible" @close="clickCancel" width="600" top="10vh">
+        <el-dialog title="用户菜单权限配置" :visible.sync="dialog.dialogVisible" @close="clickCancel" :close-on-click-modal="false" width="600" top="10vh">
             <el-tree
                 ref="tree"
                 :data="treeData.data"
@@ -23,6 +23,7 @@
                 :default-checked-keys="defaultCheckedKeys"
                 :default-expand-all="false"
                 @check="handleCheckChange"
+                
                 >
             </el-tree>
             <div slot="footer" class="dialog-footer">
@@ -43,6 +44,7 @@ export default {
         return{
             defaultCheckedKeys:[],
             checkedKeys:[],
+            halfCheckedKeys:[],
             tableColumn:[
                 {
                     label: '用户名',
@@ -89,15 +91,17 @@ export default {
             this.treeData = util.getMenuPermissionData(this,this.$store.state.AllPages)
             //设置已给权限目录
             let roleData= JSON.parse(window.localStorage.getItem('role-'+this.dialog.rowId))
-            this.defaultCheckedKeys = roleData ? roleData : []
+            this.defaultCheckedKeys = roleData? roleData.checkedKeys : []
             //判断全选或者反选
-            roleData.length >= this.treeData.ids.length ? this.checkAll = true : this.checkAll = false
+            roleData.checkedKeys.length+roleData.halfCheckedKeys.length >= this.treeData.ids.length ? this.checkAll = true : this.checkAll = false
             console.log('获取存储目录权限',window.localStorage.getItem('role-'+this.dialog.rowId))
         },
         //树形控件选中
         handleCheckChange(data, node){
+            console.log(data,node)
             //存储当前选项
             this.checkedKeys=node.checkedKeys
+            this.halfCheckedKeys=node.halfCheckedKeys
         },
         //全/反选
         handleChecked(){
@@ -114,7 +118,7 @@ export default {
         clickSubmit(){
             console.log('根据用户存储目录权限',this.checkedKeys)
             //根据id存储当前权限
-            window.localStorage.setItem('role-'+this.dialog.rowId, JSON.stringify(this.checkedKeys));
+            window.localStorage.setItem('role-'+this.dialog.rowId, JSON.stringify({'checkedKeys':this.checkedKeys,'halfCheckedKeys':this.halfCheckedKeys}));
             //清理
             this.clickCancel()
         },

@@ -7,6 +7,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './store/index'
 import myGlobalMethod from './libs/globalApproach.js'
+//进度条样式
+import 'nprogress/nprogress.css'
 
 Vue.use(VueI18n);
 Vue.use(ElementUI);

@@ -3,6 +3,10 @@ import { routers } from './router';
 import VueRouter from 'vue-router';
 import Cookies from 'js-cookie';
 import Util from '../libs/util'
+import NProgress from 'nprogress'
+
+
+NProgress.configure({ showSpinner: false })
 
 Vue.use(VueRouter);
 // 路由配置
@@ -14,6 +18,7 @@ export const router = new VueRouter(RouterConfig);
 
 const whiteList = ['/login'] // 不重定向白名单
 router.beforeEach((to, from, next) => {
+  NProgress.start()
   if (Cookies.get('userInfo')) {
     next()
   } else {
@@ -31,6 +36,7 @@ router.afterEach((to,from) => {
   // console.log(router.app)
   Util.openNewPage(router.app,to);
   Util.setTitle(router.app,to)
+  NProgress.done()
 })
 
 const originalPush = VueRouter.prototype.push

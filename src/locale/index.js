@@ -3,6 +3,8 @@ import VueI18n from 'vue-i18n'
 import zhCN from './lang/zh-CN';
 import enUS from './lang/en-US';
 import jaJP from './lang/ja-JP';
+import enLocale from 'element-ui/lib/locale/lang/en'
+import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
 Vue.use(VueI18n)
 
@@ -16,9 +18,9 @@ const lang = window.localStorage.lang || localLang || 'zh-CN';
 Vue.config.lang = lang;
 
 
-const mergeZH = Object.assign(zhCN);
+const mergeZH = Object.assign(zhCN, zhLocale);
 const mergeJP = Object.assign(jaJP);
-const mergeEN = Object.assign(enUS);
+const mergeEN = Object.assign(enUS, enLocale);
 
 Vue.locale('zh-CN', mergeZH);
 Vue.locale('ja-JP', mergeJP);

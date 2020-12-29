@@ -2,7 +2,7 @@
     <div>
         <el-card class="box-card">
             <p>导出表格</p><el-button type="primary" :loading="exportLoading" @click="exportExcel">主要按钮</el-button>
-            <table-bank :tableColumn="column" :tableData="data"></table-bank>
+            <table-bank :tableColumn="column" :tableData="data" :params="searchForm" @getList="getList"></table-bank>
         </el-card>
     </div>
 </template>
@@ -50,10 +50,17 @@ export default {
                     category3: 9
                 }
             ],
-            exportLoading:false
+            exportLoading:false,
+            searchForm:{
+                pageNumber:1,
+                pageSize:10,
+            }
         }
     },
     methods:{
+        getList(){
+
+        },
         exportExcel () {
             if (this.data.length) {
                 this.exportLoading = true

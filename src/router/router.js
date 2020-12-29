@@ -36,6 +36,7 @@ export const appRouter = [
     meta: { title: 'menus.systemConfig', icon: 'el-icon-menu' },
     children: [
       { id:'1-0', show:true, path: 'role-configuration', name: 'role-configuration',meta: { title: 'menus.roleConfiguration', icon: 'el-icon-menu' }, component: () => import('@/views/system/role-configuration/roleConfiguration.vue')},
+      { id:'1-1', show:true, path: 'user-configuration', name: 'user-configuration',meta: { title: 'menus.userConfiguration', icon: 'el-icon-menu' }, component: () => import('@/views/system/user-configuration/userConfiguration.vue')},
     ]
   },
   {
@@ -51,13 +52,14 @@ export const appRouter = [
     // which is lazy-loaded when the route is visited.
     children: [
       { id:'2-0', show:true, path: 'about/:id', name: 'id',meta: { title: 'test-2-1', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
-      { id:'2-1', show:true, path: 'a', name: 'a',meta: { title: 'menus.throttleFunction', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/throttle-function/throttleFunction.vue')},
-      { id:'2-2', show:true, path: 'b', name: 'b',meta: { title: 'menus.exportExcel', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/excel/exportExcel.vue')},
-      { id:'2-3', show:true, path: 'c', name: 'c',meta: { title: 'menus.switchTheme', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/switch-theme/switchTheme.vue')},
-      { id:'2-4', show:true, path: 'd', name: 'd',meta: { title: 'test-2-5', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
+      { id:'2-1', show:true, path: 'throttle-function', name: 'throttle-function',meta: { title: 'menus.throttleFunction', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/throttle-function/throttleFunction.vue')},
+      { id:'2-2', show:true, path: 'export-excel', name: 'export-excel',meta: { title: 'menus.exportExcel', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/excel/exportExcel.vue')},
+      { id:'2-3', show:true, path: 'switch-theme', name: 'switch-theme',meta: { title: 'menus.switchTheme', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/switch-theme/switchTheme.vue')},
+      { id:'2-4', show:true, path: 'cropper', name: 'cropper',meta: { title: 'menus.cropper', icon: 'el-icon-menu' }, component: () => import('@/views/study-file/cropper/cropper.vue')},
       { id:'2-5', show:true, path: 'e', name: 'e',meta: { title: 'test-2-6', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')},
       { id:'2-6', show:true, path: 'f', name: 'f',meta: { title: 'test-2-7', icon: 'el-icon-menu' }, component: () => import('@/views/About.vue')}
     ]
+    // src\views\system\user-configuration\userConfiguration.vue
   },
   {
     id:'3', 

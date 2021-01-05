@@ -1,6 +1,5 @@
-import { appRouter } from "../router/router"
 import Cookies from 'js-cookie';
-import { turn } from "core-js/fn/array";
+// import { turn } from "core-js/fn/array";
 
 let util = {}
 
@@ -11,6 +10,7 @@ util.setTitle = function (vm, route) {
 util.openNewPage = function (vm, route) {
     if (!vm.$store) { return }
     let routeParam = route
+    let appRouter = vm.$store.state.AllPages
     let openPages = vm.$store.state.openPages
     let cachePage = vm.$store.state.cachePage
     for (let a = 0; a < appRouter.length; a++) {

@@ -1,6 +1,6 @@
 <template>
  <el-row>
-      <el-col span="24">
+      <el-col :span="24">
         <el-card>
             <div class="cropper-example cropper-first">
                 <cropper :src="exampleImageSrc" crop-button-text="确认提交" @on-crop="handleCroped" />
@@ -18,7 +18,7 @@ export default {
     },
     data(){
         return{
-
+            exampleImageSrc: ''
         }
     },
     computed: {

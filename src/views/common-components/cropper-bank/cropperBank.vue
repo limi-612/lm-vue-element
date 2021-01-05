@@ -38,7 +38,6 @@
 
 <script>
 import Cropper from 'cropperjs'
-import './index.less'
 import 'cropperjs/dist/cropper.min.css'
 export default {
   name: 'Cropper',
@@ -127,3 +126,6 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+@import './index.less';
+</style>

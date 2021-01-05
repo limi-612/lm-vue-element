@@ -39,13 +39,13 @@
           size="mini"
           :disabled="params.pageNumber !== 1 ? false : true"
           @click="changePage('del')"
-          >上一页</el-button
+          >{{$t('common.previousPage')}}</el-button
         >
         <el-button
           size="mini"
           :disabled="tableData.length < params.pageSize ? true : false"
           @click="changePage('add')"
-          >下一页<i class="el-icon-arrow-right el-icon--right"></i
+          >{{$t('common.nextPage')}}<i class="el-icon-arrow-right el-icon--right"></i
         ></el-button>
       </el-button-group>
       <span class="el-pagination__jump">{{ $t("common.goto") }}</span>
@@ -86,7 +86,7 @@ export default {
       required: false,
     },
     DetailedPagination: {
-      type: Object,
+      type: Boolean,
       default: true,
     },
   },

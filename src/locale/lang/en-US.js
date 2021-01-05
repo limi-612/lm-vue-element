@@ -10,7 +10,9 @@ export default {
     dropOut: 'Drop out',
     goto:'Go to',
     page:'page',
-    currentPage:'Current page: '
+    currentPage:'Current page: ',
+    previousPage:'Previous page',
+    nextPage:'Next page'
   },
   menus: {
     demo: 'Demo',

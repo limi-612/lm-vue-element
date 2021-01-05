@@ -17,7 +17,7 @@
 <script>
 import Cookies from 'js-cookie';
 import util from "../libs/util";
-import {appRouter} from "../router/router"
+// import {appRouter} from "../router/router"
 export default {
     data(){
         return{
@@ -25,7 +25,8 @@ export default {
                 user:'',
                 pass:'',
             },
-            rules:{}
+            rules:{},
+            appRouter:this.$store.state.AllPages
         }
     },
     methods:{
@@ -34,7 +35,7 @@ export default {
             this.$store.commit('clearAllPages')
             this.$router.push({name:'home'})
             // location.reload()
-            util.setDisplayPage(appRouter,JSON.parse(window.localStorage.getItem('role-'+Cookies.get('userInfo'))))
+            util.setDisplayPage(this.appRouter,JSON.parse(window.localStorage.getItem('role-'+Cookies.get('userInfo'))))
         },
         resetForm(){
 

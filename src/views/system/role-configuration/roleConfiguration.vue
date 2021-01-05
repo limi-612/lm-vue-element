@@ -5,7 +5,7 @@
         </div>
         <!-- <el-button @click="handleClick" type="primary">确定</el-button> -->
        
-        <table-bank :tableColumn="tableColumn" :tableData="tableData">
+        <table-bank :tableColumn="tableColumn" :tableData="tableData" :params="searchForm">
             <el-table-column  slot="extraColumn" fixed="right" label="操作" width="220">
                 <template slot-scope="scope">
                     <el-button size="mini" @click="showConfiguration(scope.$index, scope.row)">配置</el-button>
@@ -72,6 +72,10 @@ export default {
             checkAll:false,
             treeData:{
                 data:[]
+            },
+            searchForm:{
+                pageNumber:1,
+                pageSize:10,
             }
         }
     },

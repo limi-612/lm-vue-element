@@ -10,7 +10,9 @@ export default {
     dropOut: '退出',
     goto:'前往',
     page:'页',
-    currentPage:'当前页：'
+    currentPage:'当前页：',
+    previousPage:'上一页',
+    nextPage:'下一页'
   },
   menus: {
     demo: '案例',

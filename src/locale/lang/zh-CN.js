@@ -8,11 +8,11 @@ export default {
     closeOther: '关闭其他',
     personalSpace: '个人空间',
     dropOut: '退出',
-    goto:'前往',
-    page:'页',
-    currentPage:'当前页：',
-    previousPage:'上一页',
-    nextPage:'下一页'
+    goto: '前往',
+    page: '页',
+    currentPage: '当前页：',
+    previousPage: '上一页',
+    nextPage: '下一页'
   },
   menus: {
     demo: '案例',
@@ -22,7 +22,8 @@ export default {
     roleConfiguration: '权限配置',
     systemConfig: '系统配置',
     cropper: '裁剪组件',
-    userConfiguration: '用户配置'
+    userConfiguration: '用户配置',
+    palatability: '适口化',
   },
   eea: {
     home: '首页'

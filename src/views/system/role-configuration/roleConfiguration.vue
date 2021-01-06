@@ -92,12 +92,12 @@ export default {
             //弹窗展示
             this.dialog.dialogVisible = true
             //获取设置目录数据
-            this.treeData = util.getMenuPermissionData(this,this.$store.state.AllPages)
+            this.treeData = util.getMenuPermissionData(this,this.$store.state.AllShowPages)
             //设置已给权限目录
             let roleData= JSON.parse(window.localStorage.getItem('role-'+this.dialog.rowId))
-            this.defaultCheckedKeys = roleData? roleData.checkedKeys : []
+            this.defaultCheckedKeys = roleData ? roleData.checkedKeys : []
             //判断全选或者反选
-            roleData.checkedKeys.length+roleData.halfCheckedKeys.length >= this.treeData.ids.length ? this.checkAll = true : this.checkAll = false
+            roleData&&roleData.checkedKeys.length+roleData.halfCheckedKeys.length >= this.treeData.ids.length ? this.checkAll = true : this.checkAll = false
             console.log('获取存储目录权限',window.localStorage.getItem('role-'+this.dialog.rowId))
         },
         //树形控件选中

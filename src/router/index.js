@@ -11,7 +11,8 @@ NProgress.configure({ showSpinner: false })
 Vue.use(VueRouter);
 // 路由配置
 const RouterConfig = {
-  routes: routers
+  routes: routers,
+  mode: 'history'
 };
 
 export const router = new VueRouter(RouterConfig);

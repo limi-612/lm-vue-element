@@ -8,11 +8,11 @@ export default {
     closeOther: 'Close other',
     personalSpace: 'Personal space',
     dropOut: 'Drop out',
-    goto:'Go to',
-    page:'page',
-    currentPage:'Current page: ',
-    previousPage:'Previous page',
-    nextPage:'Next page'
+    goto: 'Go to',
+    page: 'page',
+    currentPage: 'Current page: ',
+    previousPage: 'Previous page',
+    nextPage: 'Next page'
   },
   menus: {
     demo: 'Demo',
@@ -22,7 +22,8 @@ export default {
     roleConfiguration: 'Role configuration',
     systemConfig: 'System configuration',
     cropper: 'cropper component',
-    userConfiguration: 'User configuration'
+    userConfiguration: 'User configuration',
+    palatability: 'Palatability',
   },
   eea: {
     home: 'Home'

@@ -1,16 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { appRouter } from "../router/router"
+import { appRouter,arguRouter } from "../router/router"
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        AllPages:appRouter,
+        AllPages:[...appRouter, ...arguRouter],
         openPages:[
             { path: '/home', name: 'home',meta: { title: 'test-1-1', icon: 'el-icon-menu' }, component: () => import('@/views/system/home/Home.vue') }
         ],
-        cachePage:['/home']
+        cachePage:['/home'],
+        AllShowPages:[...appRouter]
     },
     // 改变方法
     mutations: {

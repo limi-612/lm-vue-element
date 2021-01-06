@@ -28,7 +28,7 @@
                     :disable-transitions="false"
                     @close="handleClose(tag)"
                     @click="handleClick(tag)">
-                    {{$t(tag.meta.title)}}
+                    {{tag.meta.title}}
                 </el-tag>
             </div>
         </div>

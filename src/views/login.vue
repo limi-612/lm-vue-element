@@ -26,7 +26,7 @@ export default {
                 pass:'',
             },
             rules:{},
-            appRouter:this.$store.state.AllPages
+            appRouter:this.$store.state.AllShowPages
         }
     },
     methods:{

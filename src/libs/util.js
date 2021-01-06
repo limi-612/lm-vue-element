@@ -4,7 +4,20 @@ import Cookies from 'js-cookie';
 let util = {}
 
 util.setTitle = function (vm, route) {
-    window.document.title = vm.$t(route.meta.title)
+    let meta = getRouteTitleHandled(vm,route)
+    window.document.title = meta.title
+}
+export const getRouteTitleHandled = (vm,route) => {
+    let router = { ...route }
+    let meta = { ...route.meta }
+    let title = ''
+    if (meta.title) {
+        if (typeof meta.title === 'function') {
+        title = router.params.id
+        } else title = vm.$t(meta.title)
+    }
+    meta.title = title
+    return meta
 }
 
 util.openNewPage = function (vm, route) {
@@ -18,12 +31,17 @@ util.openNewPage = function (vm, route) {
             for (let b = 0; b < appRouter[a].children.length; b++) {
                 if (appRouter[a].children[b].path == routeParam.path) {
                     cachePage.indexOf(routeParam.path) >= 0 ? '' :
-                        openPages.push(appRouter[a].children[b]), cachePage.push(routeParam.path)
+                        openPages.push({
+                            component: appRouter[a].children[b].component,
+                            meta: getRouteTitleHandled(vm,routeParam),
+                            name: appRouter[a].children[b].name,
+                            path: appRouter[a].children[b].path
+                        }), cachePage.push(routeParam.path)
                 } else if (appRouter[a].children[b].name == routeParam.name && appRouter[a].children[b].path != routeParam.path) {
                     cachePage.indexOf(routeParam.path) >= 0 ? '' :
                         openPages.push({
                             component: appRouter[a].children[b].component,
-                            meta: appRouter[a].children[b].meta,
+                            meta: getRouteTitleHandled(vm,routeParam),
                             name: appRouter[a].children[b].name,
                             path: routeParam.path
                         }), cachePage.push(routeParam.path)

@@ -28,7 +28,7 @@ export default {
     data(){
         return{
             routerActive:this.$route.path,
-            menuList:this.$store.state.AllPages,
+            menuList:this.$store.state.AllShowPages,
         }
     },
      watch: {
@@ -43,7 +43,14 @@ export default {
         handleOpen(){},
         handleClose(){},
         rightClicking(data){
-            this.$router.push({name:'id',params:{id:new Date().getTime()}})
+            let ids = new Date().getTime()
+            this.$router.push({
+                name:'paramsx',
+                params:{id:ids},
+                meta: {
+                    title: `动态路由-${ids}`
+                }
+            })
         },
     },
     mounted(){
